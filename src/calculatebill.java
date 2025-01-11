@@ -274,7 +274,7 @@ public class calculatebill extends javax.swing.JFrame {
         } catch (SQLException ex) {
             // Handle SQL exceptions (e.g., database connection or query issues)
             Logger.getLogger(calculatebill.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Error retrieving customer details.");
+            JOptionPane.showMessageDialog(null, "Error retrieving customer details. Please find the issue");
         }
     }
     }//GEN-LAST:event_jComboBox2ActionPerformed
