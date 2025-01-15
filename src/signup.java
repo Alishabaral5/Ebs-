@@ -1,17 +1,13 @@
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import project.connectionpro;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 
 /**
  *
@@ -24,24 +20,41 @@ public class signup extends javax.swing.JFrame {
      */
     public signup() {
         initComponents();
-         //meternb();
+        addFocusListenerToMeterField();
     }
-    PreparedStatement pst=null;
-   /* private void meternb()
-    {
-        try {
-            Connection con=connectionpro.getconn();
-            pst=con.prepareStatement("select * from newcustomer");
-            ResultSet rs =pst.executeQuery();
-            jTextField1.removeAll();
-            while(rs.next()){
-               jTextField1.setText(rs.getString(1));
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(calculatebill.class.getName()).log(Level.SEVERE, null, ex);
+    private void addFocusListenerToMeterField() {
+    jTextField1.addFocusListener(new FocusListener() {
+        @Override
+        public void focusGained(FocusEvent e) {
+           
         }
-    }*/
+
+        @Override
+        public void focusLost(FocusEvent e) {
+            try {
+                // When the user leaves the meter field, fetch data from the database
+                String meterNumber = jTextField1.getText().trim();
+                if (!meterNumber.isEmpty()) {
+                    Connection con = connectionpro.getconn();
+                    Statement st = con.createStatement();
+                    ResultSet rs = st.executeQuery("SELECT name FROM newcustomer WHERE `meter number` = '" + meterNumber + "'");
+                    
+                    if (rs.next()) {
+                        String name = rs.getString("name");
+                        jTextField3.setText(name); // Set the customer name in the text field
+                    } else {
+                        jTextField3.setText(""); // Clear if no data found
+                        JOptionPane.showMessageDialog(null, "No customer found for this Meter Number.");
+                    }
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error retrieving customer details.");
+            }
+        }
+    });
+}
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,6 +98,13 @@ public class signup extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Password");
+
+        jTextField3.setEditable(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Sign Up");
@@ -180,20 +200,6 @@ public class signup extends javax.swing.JFrame {
         try{
             Connection con=connectionpro.getconn();
             Statement st=con.createStatement();
-            
-           /* String query = "SELECT name FROM newcustomer WHERE `meter number` = '" + meter + "'";
-            ResultSet rs = st.executeQuery(query);
-
-            // If the Meter Number exists, set the customer name
-            if (rs.next()) {
-                String customerName = rs.getString("name");
-                System.out.println("Customer Name: " + customerName); 
-                jTextField3.setText(customerName); // Populate name field with customer name
-            } else {
-                JOptionPane.showMessageDialog(null, "Meter Number not found!");
-                return;  // Exit if Meter Number is not found
-            }*/
-
             st.executeUpdate("insert into signup values('"+meter+"','"+user+"','"+nam+"','"+pas+"')");
             JOptionPane.showMessageDialog(null,"successfully added");
             setVisible(false);
@@ -202,42 +208,18 @@ public class signup extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"Error during sign up");
         }
-        
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-       
-        String selectedMeterNumber = jTextField1.getText().trim(); // Get meter number
-
-        // If meter number is not empty, retrieve customer name
-        if (!selectedMeterNumber.isEmpty()) {
-            try {
-                Connection con = connectionpro.getconn();
-                String query = "SELECT name FROM newcustomer WHERE `meter number` = ?";
-                pst = con.prepareStatement(query);
-                pst.setString(1, selectedMeterNumber);
-                ResultSet rs = pst.executeQuery();
-
-                if (rs.next()) {
-                    String name = rs.getString("name");
-                    jTextField2.setText(name);  // Populate username field with customer's name
-                } else {
-                    jTextField2.setText(""); // Clear if no result found
-                    JOptionPane.showMessageDialog(null, "Customer details not found for the selected meter number.");
-                }
-
-            } catch (SQLException ex) {
-                Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "Error retrieving customer details.");
-            }
-        }
-                                              
-    
-    
     }//GEN-LAST:event_jTextField1ActionPerformed
- private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jTextField3ActionPerformed
+ /*private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {
     String selectedMeterNumber = jTextField1.getText().trim(); // Get meter number
 
     // If meter number is not empty, retrieve customer name
@@ -261,7 +243,7 @@ public class signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error retrieving customer details.");
         }
     }
-}
+}*/
 
     /**
      * @param args the command line arguments

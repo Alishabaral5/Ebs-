@@ -1,5 +1,10 @@
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,13 +16,35 @@ import javax.swing.JFrame;
  * @author acer
  */
 public class chome extends javax.swing.JFrame {
-
+private String loggedInMeterNumber;
     /**
      * Creates new form chome
      */
-    public chome() {
+    public chome(String meter) {
         initComponents();
+        this.loggedInMeterNumber = meter;
          setExtendedState(JFrame.MAXIMIZED_BOTH);
+         jMenu6.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+                // This will be called when the Logout menu is selected
+                System.out.println("Logout Menu Selected");
+
+                // Perform logout action (hide current window, open login window)
+                setVisible(false);  // Hide the home window
+                new login().setVisible(true);  // Show the login window
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+                // Optionally handle deselection if needed
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+                // Optionally handle cancellation if needed
+            }
+        });
     }
 
     /**
@@ -48,7 +75,6 @@ public class chome extends javax.swing.JFrame {
         canvas1 = new java.awt.Canvas();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -58,6 +84,9 @@ public class chome extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -131,10 +160,6 @@ public class chome extends javax.swing.JFrame {
 
         getContentPane().add(jLayeredPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 7, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Logout");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 0, 90, -1));
-
         jMenu2.setText("INFORMATION");
 
         jMenuItem2.setText("Update Info");
@@ -156,6 +181,11 @@ public class chome extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("USER");
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
 
         jMenuItem4.setText("Pay Bill");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +209,32 @@ public class chome extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("UTILITY");
+
+        jMenuItem6.setText("Notepad");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem6);
+
+        jMenuItem7.setText("Calculator");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem7);
+
         jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("LOGOUT");
+        jMenu6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu6ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -191,22 +246,50 @@ public class chome extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        cviewinfo viewinfoForm = new cviewinfo();
-        viewinfoForm.setVisible(true);
-        this.setVisible(false);
+      new cviewinfo(loggedInMeterNumber).setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-         cupdateinfo updateInfoForm = new cupdateinfo();
-        updateInfoForm.setVisible(true);
-        this.setVisible(false);
+      new cupdateinfo(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        new billdetails(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+        // TODO add your handling code here:
+         new paybill().setVisible(true);
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    try {
+        // TODO add your handling code here:
+        Runtime.getRuntime().exec("notepad.exe");
+    } catch (IOException ex) {
+        Logger.getLogger(chome.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        try {
+        // TODO add your handling code here:
+        Runtime.getRuntime().exec("calc.exe");
+    } catch (IOException ex) {
+        Logger.getLogger(chome.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Logout clicked!"); 
+        this.dispose(); // Close the home window
+        this.setVisible(false);
+        new login().setVisible(true);
+    }//GEN-LAST:event_jMenu6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,18 +317,18 @@ public class chome extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(chome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ String meter = "1";
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new chome().setVisible(true);
+               new chome("").setVisible(true);
+               //new chome().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Canvas canvas1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -255,12 +338,15 @@ public class chome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;

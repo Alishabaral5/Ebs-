@@ -1,4 +1,4 @@
-import java.sql.Connection;
+ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -154,10 +154,12 @@ public class login extends javax.swing.JFrame {
               ResultSet rs =pst.executeQuery();
            if(rs.next())
            {
+               String meter = rs.getString("meter number");
                JOptionPane.showMessageDialog(this, "Welcome " + username);
                         setVisible(false);
-                        new chome().setVisible(true);
-               
+                        cviewinfo customerView = new cviewinfo(meter); 
+                        new chome(meter).setVisible(true);
+               //customerView.setVisible(true);
             }
            else
                   {
