@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
@@ -27,15 +28,30 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jMenu1.addMenuListener(new MenuListener() {
+       jMenu1.addMenuListener(new MenuListener() {
             @Override
             public void menuSelected(MenuEvent e) {
                 // This will be called when the Logout menu is selected
-                System.out.println("Logout Menu Selected");
+              /*  System.out.println("Logout Menu Selected");
 
                 // Perform logout action (hide current window, open login window)
                 setVisible(false);  // Hide the home window
-                new login().setVisible(true);  // Show the login window
+                new login().setVisible(true);  // Show the login window*/
+        int response = JOptionPane.showConfirmDialog(
+                null,                             // Parent component
+                "Are you sure you want to log out?", // Message
+                "Logout Confirmation",            // Title
+                JOptionPane.YES_NO_OPTION,        // Options (Yes / No)
+                JOptionPane.QUESTION_MESSAGE      // Message type (question icon)
+        );
+
+        // Handle the user's response
+        if (response == JOptionPane.YES_OPTION) {
+            setVisible(false);  
+            new login().setVisible(true);  
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+          JOptionPane.showConfirmDialog(null,"Logout cancelled by closing dialog (X)");
+        }
             }
 
             @Override
@@ -49,7 +65,7 @@ public class home extends javax.swing.JFrame {
             }
         });
     
-        
+       
         
     }
 
@@ -205,7 +221,8 @@ public class home extends javax.swing.JFrame {
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         System.out.println("Logout clicked!"); 
         this.dispose(); // Close the home window
-        this.setVisible(false);
+        //this.setVisible(false);
+        
         new login().setVisible(true);
        
     }//GEN-LAST:event_jMenu1ActionPerformed

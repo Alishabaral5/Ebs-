@@ -15,14 +15,34 @@ import net.proteanit.sql.DbUtils;
  * @author acer
  */
 public class deposit extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form deposit
      */
     public deposit() {
         initComponents();
+       // loadBillDetails();
     }
-    
+   /*  private void loadBillDetails() {
+        try {
+            // Check if the connection is successful
+            Connection con = connectionpro.getconn();
+            if (con == null) {
+                JOptionPane.showMessageDialog(null, "Database connection failed.");
+                return;
+            }
+            
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM bills WHERE `meter number` = ?"; // Update this query if necessary
+            ResultSet rs = st.executeQuery(query);
+            
+            // Use DbUtils to set the ResultSet into the JTable
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            // Handle exceptions
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -163,7 +183,7 @@ public class deposit extends javax.swing.JFrame {
     try {
         Connection con = connectionpro.getconn();
         Statement st = con.createStatement();
-        String query = "SELECT `meter number`, `Name`, `Month` FROM bill WHERE `meter number` = '" + meterno + "' AND `Month` = '" + month + "'";
+        String query = "SELECT * FROM bills WHERE `meter number` = '" + meterno + "' AND `Month` = '" + month + "'";
         ResultSet rs = st.executeQuery(query);
         if (rs.next()) {
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -184,7 +204,7 @@ public class deposit extends javax.swing.JFrame {
         {
             Connection con=connectionpro.getconn();
            Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select `meter number`, `Units`, `Total Bill`, `Status`, `Month` FROM bill");
+           ResultSet rs=st.executeQuery("select * FROM bills");
            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e)
         {

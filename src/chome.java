@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
@@ -24,15 +25,34 @@ private String loggedInMeterNumber;
         initComponents();
         this.loggedInMeterNumber = meter;
          setExtendedState(JFrame.MAXIMIZED_BOTH);
-         jMenu6.addMenuListener(new MenuListener() {
+         jMenu8.addMenuListener(new MenuListener() {
             @Override
             public void menuSelected(MenuEvent e) {
-                // This will be called when the Logout menu is selected
-                System.out.println("Logout Menu Selected");
-
-                // Perform logout action (hide current window, open login window)
+             
+               /*JOptionPane.showMessageDialog(null,"Logging Out : Are you sure???");
+               //JOptionPane.showConfirmDialog(this,  "Are you sure you want to log out?", "Logout Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE );
                 setVisible(false);  // Hide the home window
-                new login().setVisible(true);  // Show the login window
+                new login().setVisible(true);  // Show the login window*/
+                     int response = JOptionPane.showConfirmDialog(
+                null,                             // Parent component
+                "Are you sure you want to log out?", // Message
+                "Logout Confirmation",            // Title
+                JOptionPane.YES_NO_OPTION,        // Options (Yes / No)
+                JOptionPane.QUESTION_MESSAGE      // Message type (question icon)
+        );
+
+        // Handle the user's response
+        if (response == JOptionPane.YES_OPTION) {
+            // If the user clicked "Yes", log out and show the login screen
+            setVisible(false);  // Hide the home window
+            new login().setVisible(true);  // Show the login window
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+            // If the user clicked the "X" button (closed the dialog)
+            // Just dispose the dialog box without closing the application
+            System.out.println("Logout cancelled by closing dialog (X)");
+        }
+        // No action needed for "No" as the default behavior is to stay logged in
+    
             }
 
             @Override
@@ -43,10 +63,17 @@ private String loggedInMeterNumber;
             @Override
             public void menuCanceled(MenuEvent e) {
                 // Optionally handle cancellation if needed
+                setVisible(false);
             }
         });
+        /*jMenu8.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jMenu8ActionPerformed(evt);
     }
-
+});*/
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -86,7 +113,10 @@ private String loggedInMeterNumber;
         jMenu5 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -206,6 +236,11 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("REPORT");
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("UTILITY");
@@ -228,13 +263,23 @@ private String loggedInMeterNumber;
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("LOGOUT");
-        jMenu6.addActionListener(new java.awt.event.ActionListener() {
+        jMenu7.setText("OTHERS");
+
+        jMenuItem8.setText("jHelp");
+        jMenu7.add(jMenuItem8);
+
+        jMenuItem9.setText("About");
+        jMenu7.add(jMenuItem9);
+
+        jMenuBar1.add(jMenu7);
+
+        jMenu8.setText("LOGOUT");
+        jMenu8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu6ActionPerformed(evt);
+                jMenu8ActionPerformed(evt);
             }
         });
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
 
@@ -283,13 +328,20 @@ private String loggedInMeterNumber;
     }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+    private void jMenu8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu8ActionPerformed
         // TODO add your handling code here:
-        System.out.println("Logout clicked!"); 
-        this.dispose(); // Close the home window
+        
+       this.dispose(); // Close the home window
         this.setVisible(false);
+        
         new login().setVisible(true);
-    }//GEN-LAST:event_jMenu6ActionPerformed
+       
+    }//GEN-LAST:event_jMenu8ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        // TODO add your handling code here:
+        new generatebill().setVisible(true);
+    }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,7 +390,8 @@ private String loggedInMeterNumber;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -347,6 +400,8 @@ private String loggedInMeterNumber;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
