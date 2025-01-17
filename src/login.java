@@ -155,7 +155,7 @@ public class login extends javax.swing.JFrame {
                String meter = rs.getString("meter number");
                JOptionPane.showMessageDialog(this, "Welcome " + username);
                         setVisible(false);
-                        cviewinfo customerView = new cviewinfo(meter); 
+                        viewinfo customerView = new viewinfo(meter); 
                         new chome(meter).setVisible(true);
                //customerView.setVisible(true);
             }

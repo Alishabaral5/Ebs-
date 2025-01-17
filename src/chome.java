@@ -180,12 +180,14 @@ private String loggedInMeterNumber;
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ele.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-310, -240, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-320, -210, -1, -1));
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jMenu2.setText("INFORMATION");
 
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem2.setText("Update Info");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +196,7 @@ private String loggedInMeterNumber;
         });
         jMenu2.add(jMenuItem2);
 
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem3.setText("View Info");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,6 +214,7 @@ private String loggedInMeterNumber;
             }
         });
 
+        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem4.setText("Pay Bill");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +223,7 @@ private String loggedInMeterNumber;
         });
         jMenu3.add(jMenuItem4);
 
+        jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem5.setText("Bill Details");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,6 +241,7 @@ private String loggedInMeterNumber;
             }
         });
 
+        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem10.setText("Generate Bill");
         jMenu4.add(jMenuItem10);
 
@@ -243,6 +249,7 @@ private String loggedInMeterNumber;
 
         jMenu5.setText("UTILITY");
 
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem6.setText("Notepad");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +258,7 @@ private String loggedInMeterNumber;
         });
         jMenu5.add(jMenuItem6);
 
+        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem7.setText("Calculator");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,9 +271,11 @@ private String loggedInMeterNumber;
 
         jMenu7.setText("OTHERS");
 
+        jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem8.setText("Help");
         jMenu7.add(jMenuItem8);
 
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem9.setText("About");
         jMenu7.add(jMenuItem9);
 
@@ -289,7 +299,7 @@ private String loggedInMeterNumber;
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-      new cviewinfo(loggedInMeterNumber).setVisible(true);
+      new viewinfo(loggedInMeterNumber).setVisible(true);
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
