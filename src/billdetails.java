@@ -22,7 +22,28 @@ public class billdetails extends javax.swing.JFrame {
      */
     public billdetails(String meter) {
         initComponents();
-        this.loggedInMeterNumber = meter; 
+        this.loggedInMeterNumber = meter;
+         loadBillDetails();
+    }
+     private void loadBillDetails() {
+        try {
+            // Check if the connection is successful
+            Connection con = connectionpro.getconn();
+            if (con == null) {
+                JOptionPane.showMessageDialog(null, "Database connection failed.");
+                return;
+            }
+            
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM bills WHERE `meter number` = '" + loggedInMeterNumber + "'"; // Update this query if necessary
+            ResultSet rs = st.executeQuery(query);
+            
+            // Use DbUtils to set the ResultSet into the JTable
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            // Handle exceptions
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
     }
 
     /**
@@ -89,16 +110,16 @@ public class billdetails extends javax.swing.JFrame {
 
     private void jTable1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentShown
         // TODO add your handling code here:
-        try
+      /*  try
         {
             Connection con=connectionpro.getconn();
            Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select * from bills where `meter number` = '" + loggedInMeterNumber + "' ");
+           ResultSet rs=st.executeQuery("select * from bils WHERE `meter number` = '" + loggedInMeterNumber + "' ");
            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e)
         {
             JOptionPane.showMessageDialog(null,e);
-        }
+        }*/
     }//GEN-LAST:event_jTable1ComponentShown
 
     /**
@@ -131,7 +152,7 @@ public class billdetails extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new billdetails("").setVisible(true);
+                new billdetails("meter").setVisible(true);
             }
         });
     }
