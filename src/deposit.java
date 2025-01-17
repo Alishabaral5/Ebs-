@@ -166,7 +166,7 @@ public class deposit extends javax.swing.JFrame {
         String query = "SELECT `meter number`, `Name`, `Month` FROM bill WHERE `meter number` = '" + meterno + "' AND `Month` = '" + month + "'";
         ResultSet rs = st.executeQuery(query);
         if (rs.next()) {
-            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         } else {
             JOptionPane.showMessageDialog(null, "No records found.");
         }
