@@ -2,6 +2,7 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane; 
 import project.connectionpro;
 /*
@@ -20,6 +21,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
    PreparedStatement pst=null;
     /**
