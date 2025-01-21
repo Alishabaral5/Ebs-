@@ -8,12 +8,13 @@
  * @author acer
  */
 public class paybill extends javax.swing.JFrame {
-
+     private String loggedInMeterNumber;
     /**
      * Creates new form paybill
      */
-    public paybill() {
+    public paybill(String meter) {
         initComponents();
+         this.loggedInMeterNumber = meter;
     }
 
     /**
@@ -190,7 +191,7 @@ public class paybill extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new paybill().setVisible(true);
+                new paybill("").setVisible(true);
             }
         });
     }

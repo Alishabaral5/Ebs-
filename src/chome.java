@@ -178,14 +178,15 @@ private String loggedInMeterNumber;
 
         getContentPane().add(jLayeredPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 7, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ele.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nature re.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-320, -210, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -11, -1, 1010));
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jMenu2.setText("INFORMATION");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem2.setText("Update Info");
@@ -208,6 +209,7 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("USER");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu3ActionPerformed(evt);
@@ -235,6 +237,7 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("REPORT");
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenu4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu4ActionPerformed(evt);
@@ -248,6 +251,7 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("UTILITY");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem6.setText("Notepad");
@@ -270,6 +274,7 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu5);
 
         jMenu7.setText("OTHERS");
+        jMenu7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem8.setText("Help");
@@ -282,6 +287,7 @@ private String loggedInMeterNumber;
         jMenuBar1.add(jMenu7);
 
         jMenu8.setText("LOGOUT");
+        jMenu8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenu8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu8ActionPerformed(evt);
@@ -314,7 +320,7 @@ private String loggedInMeterNumber;
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:
-         new paybill().setVisible(true);
+        new paybill(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -348,7 +354,7 @@ private String loggedInMeterNumber;
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
-        new generatebill().setVisible(true);
+        new generatebill(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**
