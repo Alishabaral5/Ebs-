@@ -2,7 +2,7 @@
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -212,12 +212,39 @@ public class calculatebill extends javax.swing.JFrame {
             return;
         }
         try{
-           /* Connection con=connectionpro.getconn();
-            Statement st=con.createStatement();
-            st.executeUpdate("insert into bill values('"+metern+"','"+name+"','"+add+"','"+uc+"','"+month+"')");
-            JOptionPane.showMessageDialog(null,"successfully added");
-            setVisible(false);
-            new home().setVisible(true);*/
+            
+        // Parse units consumed
+        int units = Integer.parseInt(uc);
+
+        // Calculate the bill based on NEA tariffs
+        double bill = 0.0;
+        if (units <= 20) {
+            bill = units * 4.0; // Rate: Rs. 4/unit for 1-20 units
+        } else if (units <= 50) {
+            bill = (20 * 4.0) + ((units - 20) * 7.5); // Rs. 7.5/unit for 21-50 units
+        } else if (units <= 150) {
+            bill = (20 * 4.0) + (30 * 7.5) + ((units - 50) * 9.5); // Rs. 9.5/unit for 51-150 units
+        } else if (units <= 250) {
+            bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + ((units - 150) * 11.5); // Rs. 11.5/unit for 151-250 units
+        } else {
+            bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + (100 * 11.5) + ((units - 250) * 13.0); // Rs. 13/unit for 251+ units
+        }
+
+        // Add fixed service charge
+        double serviceCharge = 50.0; // Rs. 50 fixed service charge
+        double totalBeforeVAT = bill + serviceCharge;
+
+        // Add VAT (13%)
+        double vat = totalBeforeVAT * 0.13;
+        double totalBill = totalBeforeVAT + vat;
+
+        // Round the total bill to two decimal places
+        totalBill = Math.round(totalBill * 100.0) / 100.0;
+
+        // Show bill to the user
+        JOptionPane.showMessageDialog(null, "Electricity Bill for " + units + " units: Rs. " + totalBill);
+         
+        
            Connection con = connectionpro.getconn();
             String query = "INSERT INTO bill (`meter number`, Name, Address, `Unit Consumed` , Month) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pst = con.prepareStatement(query);
@@ -234,6 +261,7 @@ public class calculatebill extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Error: Data not inserted");
             }
+            
              }catch(Exception e)
                 {
                     JOptionPane.showMessageDialog(null,"ERROR");
@@ -243,32 +271,7 @@ public class calculatebill extends javax.swing.JFrame {
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-        
-       /* try {
-            Connection con=connectionpro.getconn();
-            String mn=jComboBox2.getSelectedItem().toString();
-             pst=con.prepareStatement("select name,address from newcustomer where id = ?");
-           pst.setString(1, mn);
-           ResultSet rs =pst.executeQuery();
-            while(rs.next())
-            {
-                jComboBox2.addItem(rs.getString("meter_number"));
-                String name = rs.getString("name");  // Assuming 'name' is the column for the customer's name
-                String address = rs.getString("address");  // Assuming 'address' is the column for the customer's address
-                
-                // Set the data in the respective text fields
-                jTextField2.setText(name);
-                jTextField3.setText(address);
-               
-               
-               
-            //jComboBox2.addItem(rs.getString("meter_number"));
-        }
-           } catch (SQLException ex) {
-               Logger.getLogger(calculatebill.class.getName()).log(Level.SEVERE, null, ex);
-             }*/
-      
-      String selectedMeterNumber = (String) jComboBox2.getSelectedItem();
+        String selectedMeterNumber = (String) jComboBox2.getSelectedItem();
     if (selectedMeterNumber != null && !selectedMeterNumber.isEmpty()) {
         try {
             
