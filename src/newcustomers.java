@@ -172,10 +172,10 @@ public class newcustomers extends javax.swing.JFrame {
             return;
         }
 
-        else if (!ph.matches("\\d+")) {  // Check if phone contains only digits (regex for digits only)
-            JOptionPane.showMessageDialog(null, "Phone Number must be an integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;  // Exit if meter nb or phone is invalid
-        }
+        else if (!ph.matches("\\d{10}")) {  
+        JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;  // Exit if phone number is invalid
+    }
         else if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Email must be in correct format.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if email is invalid

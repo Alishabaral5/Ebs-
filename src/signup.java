@@ -156,12 +156,20 @@ public class signup extends javax.swing.JFrame {
       String meter=jTextField1.getText();
         String user=jTextField2.getText();
         String nam=jTextField3.getText();
-        String pas=jPasswordField1.getText();
+        //String pas=jPasswordField1.getText();
+         String pas = new String(jPasswordField1.getPassword());
         
         if (meter.isEmpty() || user.isEmpty() || nam.isEmpty() || pas.isEmpty() ) {
             JOptionPane.showMessageDialog(null, "All fields must be filled.");
             return;
         }
+        if (!isStrongPassword(pas)) {
+       JOptionPane.showMessageDialog(null, "Password must contain at least 8 characters, including upper/lowercase letters, a number, and a special character.");
+       return;
+   }
+        
+         
+        
       
         try{
             Connection con=connectionpro.getconn();
@@ -260,4 +268,34 @@ public class signup extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private boolean isStrongPassword(String pas) {
+       //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+ if (pas.length() < 8) {
+        return false;
+    }
+
+    // Check if the password contains at least one uppercase letter
+    if (!pas.matches(".*[A-Z].*")) {
+        return false;
+    }
+
+    // Check if the password contains at least one lowercase letter
+    if (!pas.matches(".*[a-z].*")) {
+        return false;
+    }
+
+    // Check if the password contains at least one digit
+    if (!pas.matches(".*[0-9].*")) {
+        return false;
+    }
+
+    // Check if the password contains at least one special character
+    if (!pas.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
+        return false;
+    }
+
+    // If all conditions are met, the password is strong
+    return true;
+}  
 }

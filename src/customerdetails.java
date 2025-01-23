@@ -158,7 +158,8 @@ public class customerdetails extends javax.swing.JFrame {
             
             // Use DbUtils to convert ResultSet into a Table Model
            
-            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+           
             
             // Revalidate and repaint the table to refresh its display
             jTable1.revalidate();
@@ -236,4 +237,7 @@ public class customerdetails extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+  
+    
 }
