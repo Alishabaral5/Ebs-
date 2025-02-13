@@ -4,16 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Ebs/Ebs-/src/calculatebill.java</file>
-            <file>file:/E:/Ebs/Ebs-/src/customerdetails.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/stripewebhook.java</file>
             <file>file:/E:/Ebs/Ebs-/src/deposit.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/login.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/viewinfo.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/newcustomers.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/cupdateinfo.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/Paytm.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/paybill.java</file>
             <file>file:/E:/Ebs/Ebs-/src/electricity/Electricity.java</file>
             <file>file:/E:/Ebs/Ebs-/src/home.java</file>
-            <file>file:/E:/Ebs/Ebs-/src/login.java</file>
             <file>file:/E:/Ebs/Ebs-/src/billdetails.java</file>
-            <file>file:/E:/Ebs/Ebs-/src/energy-powerbig.jpg</file>
             <file>file:/E:/Ebs/Ebs-/src/chome.java</file>
-            <file>file:/E:/Ebs/Ebs-/src/signup.java</file>
-            <file>file:/E:/Ebs/Ebs-/src/cupdateinfo.java</file>
+            <file>file:/E:/Ebs/Ebs-/src/generatebill.java</file>
         </group>
     </open-files>
 </project-private>

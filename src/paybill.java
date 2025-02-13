@@ -7,15 +7,115 @@
  *
  * @author acer
  */
+
+import javax.swing.*;
+import java.awt.*;
+import java.sql.*;
+import java.awt.event.*;
+import project.connectionpro;
 public class paybill extends javax.swing.JFrame {
      private String loggedInMeterNumber;
     /**
      * Creates new form paybill
      */
-    public paybill(String meter) {
+  public paybill(String meter) {
         initComponents();
-         this.loggedInMeterNumber = meter;
+         this.loggedInMeterNumber = meter;  // Initialize with the logged-in meter number
+        populateUserInfo(); 
+    
+   jComboBox1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                updateBillDetails();
+            }
+
+           
+        });
+   jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                payBill();
+            }
+
+            
+        });
+  }
+     private void populateUserInfo() {
+          try {
+            Connection con = connectionpro.getconn();
+            Statement st = con.createStatement();
+            String query = "SELECT name FROM bill WHERE `meter number` = '" + loggedInMeterNumber + "'";
+            ResultSet rs = st.executeQuery(query);
+
+            if (rs.next()) {
+                //jTextField1.setText(loggedInMeterNumber);
+               // jTextField2.setText(rs.getString("name"));
+                jTextField1.setText(loggedInMeterNumber);
+                jTextField1.setEditable(false); // Prevent user modification
+
+                jTextField2.setText(rs.getString("name"));
+                jTextField2.setEditable(false); // Prevent user modification
+
+            }
+
+            updateBillDetails();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+     }
+    private void updateBillDetails() {
+    try {
+        Connection con = connectionpro.getconn();
+        Statement st = con.createStatement();
+        String selectedMonth = jComboBox1.getSelectedItem().toString();
+        String query = "SELECT `Unit Consumed`, `Total_bill`, `Payment_status` FROM bills WHERE `meter number` = '" + loggedInMeterNumber + "' AND Month = '" + selectedMonth + "'";
+        ResultSet rs = st.executeQuery(query);
+        
+        if (rs.next()) {
+            
+            jTextField3.setText(rs.getString("Unit Consumed"));  
+            jTextField4.setText(rs.getString("Total_bill"));  
+            jTextField5.setText(rs.getString("Payment_status")); 
+            
+        }
+        else
+        {
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        e.printStackTrace();  
     }
+}
+
+   private void payBill() {
+       String selectedMonth = jComboBox1.getSelectedItem().toString();
+    String totalBill = jTextField4.getText(); // Get total bill amount
+
+    if (totalBill.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please select a month first!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    try {
+        Connection con = connectionpro.getconn();
+        Statement st = con.createStatement();
+        //String selectedMonth = jComboBox1.getSelectedItem().toString();
+        String query = "UPDATE bills SET Payment_status = 'Paid' WHERE `meter number` = '" + loggedInMeterNumber + "' AND Month = '" + selectedMonth + "'";
+        st.executeUpdate(query);
+        JOptionPane.showMessageDialog(this, "Redirecting to Paytm for Payment...");
+        
+        // Open the Paytm payment window
+        setVisible(false);
+        new Paytm(totalBill);
+
+
+        //JOptionPane.showMessageDialog(this, "Payment Successful!");
+       // jTextField5.setText("Paid");
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Payment failed: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        e.printStackTrace();
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -158,7 +258,9 @@ public class paybill extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+         
         setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

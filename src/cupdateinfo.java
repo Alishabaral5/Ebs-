@@ -186,10 +186,11 @@ public class cupdateinfo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Email and Phone fields cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
         return; // Exit the method if any field is empty
     }
-         else if (!Phone.matches("\\d+")) {  // Check if phone contains only digits (regex for digits only)
-            JOptionPane.showMessageDialog(null, "Phone Number must be an integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;  // Exit if meter nb or phone is invalid
-        }
+        
+          else if (!Phone.matches("\\d{10}")) {  
+        JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;  // Exit if phone number is invalid
+    }
         else if (!Email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Email must be in correct format.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if email is invalid
