@@ -321,7 +321,11 @@ private String loggedInMeterNumber;
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
          new paybill(loggedInMeterNumber).setVisible(true);
+=======
+        new paybill(loggedInMeterNumber).setVisible(true);
+>>>>>>> 148d2c60c5739be05087b1840d372c4ea861b9b0
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -339,7 +343,12 @@ private String loggedInMeterNumber;
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+<<<<<<< HEAD
       
+=======
+        // TODO add your handling code here:
+       // new paybill(loggedInMeterNumber).setVisible(true);
+>>>>>>> 148d2c60c5739be05087b1840d372c4ea861b9b0
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed

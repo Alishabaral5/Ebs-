@@ -195,7 +195,7 @@ public class newcustomers extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
         return;  // Exit if phone number is invalid
     }
-        else if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {  // Check if phone contains only digits (regex for digits only)
+        else if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$" /*"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"*/)) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Email must be in correct format.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if email is invalid
         }

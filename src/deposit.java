@@ -21,28 +21,22 @@ public class deposit extends javax.swing.JFrame {
      */
     public deposit() {
         initComponents();
-       // loadBillDetails();
+        
+       loadBillDetails();
     }
-   /*  private void loadBillDetails() {
+    private void loadBillDetails() {
         try {
-            // Check if the connection is successful
             Connection con = connectionpro.getconn();
-            if (con == null) {
-                JOptionPane.showMessageDialog(null, "Database connection failed.");
-                return;
-            }
+            String query = "SELECT * FROM bills";
+            PreparedStatement pst = con.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
             
-            Statement st = con.createStatement();
-            String query = "SELECT * FROM bills WHERE `meter number` = ?"; // Update this query if necessary
-            ResultSet rs = st.executeQuery(query);
-            
-            // Use DbUtils to set the ResultSet into the JTable
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
-            // Handle exceptions
-            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
-        }
-    }*/
+            JOptionPane.showMessageDialog(null, "Error loading bills: " + e.getMessage());
+             }
+    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -183,39 +177,41 @@ public class deposit extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:  
-       String meterno = jTextField1.getText();
-    String month = (String) jComboBox1.getSelectedItem();
-    
-    try {
-        Connection con = connectionpro.getconn();
-        Statement st = con.createStatement();
-        String query = "SELECT * FROM bills WHERE `meter number` = '" + meterno + "' AND `Month` = '" + month + "'";
-        ResultSet rs = st.executeQuery(query);
-        if (rs.next()) {
-          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+     /*  
+    }//GEN-LAST:event_jButton2ActionPerformed
+*/
+     String meterno = jTextField1.getText().trim();
+        String month = (String) jComboBox1.getSelectedItem();
+
+        if (meterno.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a meter number.");
+            return;
+        }
+
+        try {
+            Connection con = connectionpro.getconn();
+            String query = "SELECT * FROM bills WHERE `meter number` = ? AND `Month` = ?";
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setString(1, meterno);
+            pst.setString(2, month);
+
+            ResultSet rs = pst.executeQuery();
+             // If there are results, update the JTable
+        if (rs.isBeforeFirst()) { // Check if ResultSet has any rows
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         } else {
             JOptionPane.showMessageDialog(null, "No records found.");
+            loadBillDetails(); // Reload all data if no results found
         }
-        
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, e);
-    }
-    }//GEN-LAST:event_jButton2ActionPerformed
 
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+    }
+}
+            
+          
     private void jTable1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentShown
-     
-        //JScrollPane sp=new JScrollPane(jtable1);
-         
-        try
-        {
-            Connection con=connectionpro.getconn();
-           Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select * FROM bills");
-           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
-        }
+
         
     }//GEN-LAST:event_jTable1ComponentShown
 

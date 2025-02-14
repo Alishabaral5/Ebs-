@@ -34,7 +34,7 @@ public class calculatebill extends javax.swing.JFrame {
             Connection con=connectionpro.getconn();
             pst=con.prepareStatement("select * from newcustomer");
             ResultSet rs =pst.executeQuery();
-            jComboBox2.removeAll();
+            jComboBox2.removeAllItems();
             while(rs.next()){
                 jComboBox2.addItem(rs.getString(1));
             }
@@ -69,6 +69,10 @@ public class calculatebill extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -122,68 +126,104 @@ public class calculatebill extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText(" 30");
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Previous Reading");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("Present Reading");
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField5KeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(317, 317, 317)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(310, 310, 310)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 148d2c60c5739be05087b1840d372c4ea861b9b0
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jComboBox1, 0, 93, Short.MAX_VALUE)
+                                .addComponent(jTextField3)
+                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField1)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)))
                 .addGap(173, 173, 173))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel7))
@@ -205,69 +245,99 @@ public class calculatebill extends javax.swing.JFrame {
         String meter=(String) jComboBox2.getSelectedItem();
         String name=jTextField2.getText();
         String add=jTextField3.getText();
+        String prev=jTextField1.getText();
+        String pres=jTextField5.getText();
+        
          String uc=jTextField4.getText();
         String month=(String) jComboBox1.getSelectedItem();
         if (meter.isEmpty() || name.isEmpty() || add.isEmpty() || uc.isEmpty()|| month.isEmpty() ) {
             JOptionPane.showMessageDialog(null, "All fields must be filled.");
             return;
         }
-        try{
+       /*
             
-        // Parse units consumed
-        int units = Integer.parseInt(uc);
-
-        // Calculate the bill based on NEA tariffs
-        double bill = 0.0;
-        if (units <= 20) {
-            bill = units * 4.0; // Rate: Rs. 4/unit for 1-20 units
-        } else if (units <= 50) {
-            bill = (20 * 4.0) + ((units - 20) * 7.5); // Rs. 7.5/unit for 21-50 units
-        } else if (units <= 150) {
-            bill = (20 * 4.0) + (30 * 7.5) + ((units - 50) * 9.5); // Rs. 9.5/unit for 51-150 units
-        } else if (units <= 250) {
-            bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + ((units - 150) * 11.5); // Rs. 11.5/unit for 151-250 units
-        } else {
-            bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + (100 * 11.5) + ((units - 250) * 13.0); // Rs. 13/unit for 251+ units
-        }
-
-        // Add fixed service charge
-        double serviceCharge = 50.0; // Rs. 50 fixed service charge
-        double totalBeforeVAT = bill + serviceCharge;
-
-        // Add VAT (13%)
-        double vat = totalBeforeVAT * 0.13;
-        double totalBill = totalBeforeVAT + vat;
-
-        // Round the total bill to two decimal places
-        totalBill = Math.round(totalBill * 100.0) / 100.0;
-
-        // Show bill to the user
-        JOptionPane.showMessageDialog(null, "Electricity Bill for " + units + " units: Rs. " + totalBill);
-         
-        
-           Connection con = connectionpro.getconn();
-            String query = "INSERT INTO bill (`meter number`, Name, Address, `Unit Consumed` , Month) VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement pst = con.prepareStatement(query);
-            pst.setString(1, meter);    // Set the meter number
-            pst.setString(2, name);      // Set the customer name
-            pst.setString(3, add);       // Set the customer address
-            pst.setString(4, uc);        // Set the unit consumed
-            pst.setString(5, month);     // Set the month
-            int rowsAffected = pst.executeUpdate();
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Successfully added");
-                setVisible(false);  // Close current form
-                new home().setVisible(true);  // Open the home screen
-            } else {
-                JOptionPane.showMessageDialog(null, "Error: Data not inserted");
-            }
-            
-             }catch(Exception e)
-                {
-                    JOptionPane.showMessageDialog(null,"ERROR");
-                }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+*/
+       try {
+    // Parse units consumed
+    int previousReading = Integer.parseInt(prev);
+        int presentReading = Integer.parseInt(pres);
+        int units = presentReading - previousReading;
+         if (units < 0) {
+            JOptionPane.showMessageDialog(null, "Error: Present reading must be greater than or equal to previous reading.");
+            return;
+        }
+    //int units = Integer.parseInt(uc);
+
+    // Calculate the bill based on NEA tariffs
+    double bill = 0.0;
+    if (units <= 20) {
+        bill = units * 4.0;
+    } else if (units <= 50) {
+        bill = (20 * 4.0) + ((units - 20) * 7.5);
+    } else if (units <= 150) {
+        bill = (20 * 4.0) + (30 * 7.5) + ((units - 50) * 9.5);
+    } else if (units <= 250) {
+        bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + ((units - 150) * 11.5);
+    } else {
+        bill = (20 * 4.0) + (30 * 7.5) + (100 * 9.5) + (100 * 11.5) + ((units - 250) * 13.0);
+    }
+
+    double serviceCharge = 50.0;
+    double totalBeforeVAT = bill + serviceCharge;
+    double vat = totalBeforeVAT * 0.13;
+    double totalBill = Math.round((totalBeforeVAT + vat) * 100.0) / 100.0;
+
+    String status = "Unpaid";
+
+    // Database Connection
+    Connection con = connectionpro.getconn();
+
+    // First Insert into `bill`
+    String query1 = "INSERT INTO bill (`meter number`, Name, Address, `Unit Consumed`, Month) VALUES (?, ?, ?, ?, ?)";
+    PreparedStatement pst1 = con.prepareStatement(query1);
+    pst1.setString(1, meter);
+    pst1.setString(2, name);
+    pst1.setString(3, add);
+    pst1.setInt(4, units);
+    pst1.setString(5, month);
+
+    int rowsAffected1 = pst1.executeUpdate();
+
+    // Second Insert into `bills`
+    String query2 = "INSERT INTO bills (`meter number`, `Name`, `Month`,`previous_reading`,`present_reading`, `Unit Consumed`, `Total_bill`, `Payment_status`) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement pst2 = con.prepareStatement(query2);
+    pst2.setString(1, meter);
+    pst2.setString(2, name);
+    pst2.setString(3, month);
+    pst2.setString(4, prev);
+    pst2.setString(5, pres);
+    pst2.setInt(6, units);
+    pst2.setDouble(7, totalBill);
+    pst2.setString(8, status);
+
+    int rowsAffected2 = pst2.executeUpdate(); // Only one execution
+
+    if (rowsAffected1 > 0 && rowsAffected2 > 0) {
+        JOptionPane.showMessageDialog(null, "Successfully added\nPayment_status: " + status);
+        setVisible(false);
+        new home().setVisible(true);
+    } else {
+        JOptionPane.showMessageDialog(null, "Error: Data not inserted");
+    }
+
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "SQL ERROR: " + e.getMessage());
+    e.printStackTrace();
+} //catch (NumberFormatException e) {
+   // JOptionPane.showMessageDialog(null, "Invalid input for Unit Consumed. Please enter a number.");}
+ catch (Exception e) {
+    JOptionPane.showMessageDialog(null, "ERROR: " + e.getMessage());
+    e.printStackTrace();
+}
+    }
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
@@ -300,6 +370,33 @@ public class calculatebill extends javax.swing.JFrame {
         }
     }
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
+try {
+        String prevText = jTextField1.getText();
+        String presText = jTextField5.getText();
+
+        if (!prevText.isEmpty() && !presText.isEmpty()) {
+            int previousReading = Integer.parseInt(prevText);
+            int presentReading = Integer.parseInt(presText);
+
+            if (presentReading >= previousReading) {
+                int units = presentReading - previousReading;
+                jTextField4.setText(String.valueOf(units));
+            } else {
+                jTextField4.setText(""); // Clear the field if incorrect input
+                JOptionPane.showMessageDialog(null, "Error: Present reading must be greater than or equal to previous reading.");
+            }
+        }
+    } catch (NumberFormatException e) {
+        jTextField4.setText(""); // Clear field if input is invalid
+    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5KeyReleased
 
     /**
      * @param args the command line arguments
@@ -342,6 +439,7 @@ public class calculatebill extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -349,8 +447,11 @@ public class calculatebill extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
