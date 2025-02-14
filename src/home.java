@@ -21,7 +21,7 @@ import javax.swing.event.MenuListener;
  * @author acer
  */
 public class home extends javax.swing.JFrame {
-
+     private notification notificationManager=notification.getInstance(); 
     /**
      * Creates new form home
      */
@@ -89,6 +89,7 @@ public class home extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,6 +182,15 @@ public class home extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu1);
 
+        jMenu2.setText("DASHBOARD");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+        jMenuBar2.add(jMenu2);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,6 +273,12 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+          
+        new adminDashboard( notificationManager).setVisible(true);
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -302,6 +318,7 @@ public class home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;

@@ -110,11 +110,11 @@ public class cupdateinfo extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 127, 110, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 127, 130, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 167, 110, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 167, 130, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
@@ -123,19 +123,19 @@ public class cupdateinfo extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 207, 110, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 207, 130, -1));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 247, 110, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 247, 130, -1));
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 287, 110, -1));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 327, 110, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 287, 130, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 327, 130, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Update");
@@ -186,8 +186,8 @@ public class cupdateinfo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Email and Phone fields cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
         return; // Exit the method if any field is empty
     }
-         else if (!Phone.matches("\\d+")) {  // Check if phone contains only digits (regex for digits only)
-            JOptionPane.showMessageDialog(null, "Phone Number must be an integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
+         else if (!Phone.matches("\\d{10}")) {  // Check if phone contains only digits (regex for digits only)
+            JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if meter nb or phone is invalid
         }
         else if (!Email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {  // Check if phone contains only digits (regex for digits only)
@@ -211,6 +211,10 @@ public class cupdateinfo extends javax.swing.JFrame {
             
             if (rowsUpdated > 0) {
                 JOptionPane.showMessageDialog(this, "Information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                 String updateMessage = "Customer '" +  jTextField2.getName() + "' has updated their information.";
+    
+    // 3. Notify the admin about the update (this can be done via an in-app push notification or system message)
+              notification.getInstance().addNotification(updateMessage);  // Push the message to NotificationManager (Admin's side)
             } else {
                 JOptionPane.showMessageDialog(this, "No record found for the specified meter number.", "Error", JOptionPane.ERROR_MESSAGE);
             }

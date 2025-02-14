@@ -117,6 +117,7 @@ private String loggedInMeterNumber;
         jMenu7 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         menu1.setLabel("File");
@@ -246,6 +247,11 @@ private String loggedInMeterNumber;
 
         jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem10.setText("Generate Bill");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem10);
 
         jMenuBar1.add(jMenu4);
@@ -282,7 +288,20 @@ private String loggedInMeterNumber;
 
         jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem9.setText("About");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem9);
+
+        jMenuItem11.setText("jMenuItem11");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem11);
 
         jMenuBar1.add(jMenu7);
 
@@ -302,6 +321,7 @@ private String loggedInMeterNumber;
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+         new paybill(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -319,8 +339,7 @@ private String loggedInMeterNumber;
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
-        // TODO add your handling code here:
-        new paybill(loggedInMeterNumber).setVisible(true);
+      
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -353,9 +372,22 @@ private String loggedInMeterNumber;
     }//GEN-LAST:event_jMenu8ActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-        // TODO add your handling code here:
-        new generatebill(loggedInMeterNumber).setVisible(true);
+       
     }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+         new about().setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+         new generatebill(loggedInMeterNumber).setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+     new aboutuspage().setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,6 +441,7 @@ private String loggedInMeterNumber;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
