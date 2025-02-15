@@ -29,48 +29,55 @@ public class about extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        setLocation(new java.awt.Point(60, 230));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("About Us");
 
-        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("                Welcome to the Electricity Billing System!\n\n Our Electricity Billing System is developed as part of our college\nproject at [Pokhara Engineering College].This system automates \nthe billing process and aims to enhance the user experience by \nproviding accurate and real-time billing information for \nelectricity consumption.\nManual billing systems often result in errors, delayed bill generation,\nand customer dissatisfaction. This project addresses these issues by\nautomating the entire process, allowing users to view and pay their \nbills online in real-time.The main objective of this project is to create \nan automated, efficient, and transparent electricity billing system. \nOur goal is to reduce errors and make the billing process faster, easier, \nand more reliable for both users and administrators.\n\n\nSystem Features:\nAutomated Bill Generation: The system calculates the bill automatically \nbased on electricity consumption and generates invoices.\nUser Accounts: Customers can manage their profiles, while admins can \ncreate and oversee user data and billing.\nOnline Payment: Seamless payment options for users to pay their bills.\nReports: Real-time bill tracking and historical data for customers and \nalso generate bill.\n\nTechnologies Used:\nJava (Backend Development)\nXampp (Database Management)\nJava Swing (GUI Development)\nStripe (payment)\n\nChallenges Faced:\nData Security: Ensuring secure payment transactions was a challenge, \nbut we addressed it by integrating encryption protocols and secure \ncommunication.\nPayment Gateway Integration: Implementing a functional payment \nsystem involved overcoming technical hurdles, but after extensive \nresearch, we successfully integrated it.\n\nConclusion:\nOur Electricity Billing System offers an innovative solution to traditional\nbilling methods, aiming to improve accuracy and streamline the billing \nexperience for consumers. We believe that this system will be beneficial\nin reducing human errors,increasing efficiency, and ensuring that users \ncan easily track their electricity usage.\n\nTeam Members:\nAlisha Baral\nAnuja Lamichhane\nSheeksha Kaji Baral");
+        jTextArea1.setText("                Welcome to the Electricity Billing System!\n\n Our Electricity Billing System is developed as part of our collegeproject at \n[Pokhara Engineering College].This system automates the billing process \nand aims to enhance the user experience by providing accurate and \nreal-time billing information for electricity consumption.\nManual billing systems often result in errors, delayed bill generation,and customer \ndissatisfaction. This project addresses these issues by automating the entire process, \nallowing users to view and pay their bills online in real-time.The main \nobjective of this project is to create an automated, efficient, and transparent \nelectricity billing system. Our goal is to reduce errors and make the billing \nprocess faster, easier, and more reliable for both users and administrators.\n\n\nSystem Features:\nAutomated Bill Generation: The system calculates the bill automatically based on \nelectricity consumption and generates invoices.\nUser Accounts: Customers can manage their profiles, while admins can create and \noversee user data and billing.\nOnline Payment: Seamless payment options for users to pay their bills.\nReports: Real-time bill tracking and historical data for customers and also \ngenerate bill.\n\nTechnologies Used:\nJava (Backend Development)\nXampp (Database Management)\nJava Swing (GUI Development)\nStripe (payment)\n\nChallenges Faced:\nData Security: Ensuring secure payment transactions was a challenge, but we \naddressed it by integrating encryption protocols and secure communication.\nPayment Gateway Integration: Implementing a functional payment system involved \novercoming technical hurdles, but after extensive research, we successfully \nintegrated it.\n\nConclusion:\nOur Electricity Billing System offers an innovative solution to traditionalbilling \nmethods, aiming to improve accuracy and streamline the billing experience \nfor consumers. We believe that this system will be beneficialin reducing human \nerrors,increasing efficiency, and ensuring that users can easily track their \nelectricity usage.\n\nTeam Members:\nAlisha Baral\nAnuja Lamichhane\nSheeksha Kaji Baral");
         jScrollPane1.setViewportView(jTextArea1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(305, 305, 305))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -110,6 +117,7 @@ public class about extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

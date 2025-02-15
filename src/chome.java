@@ -117,7 +117,6 @@ private String loggedInMeterNumber;
         jMenu7 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         menu1.setLabel("File");
@@ -284,6 +283,11 @@ private String loggedInMeterNumber;
 
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuItem8.setText("Help");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem8);
 
         jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -294,14 +298,6 @@ private String loggedInMeterNumber;
             }
         });
         jMenu7.add(jMenuItem9);
-
-        jMenuItem11.setText("jMenuItem11");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(jMenuItem11);
 
         jMenuBar1.add(jMenu7);
 
@@ -324,12 +320,12 @@ private String loggedInMeterNumber;
 //<<<<<<< HEAD
          new paybill(loggedInMeterNumber).setVisible(true);
 //=======
-        new paybill(loggedInMeterNumber).setVisible(true);
+       // new paybill(loggedInMeterNumber).setVisible(true);
 //>>>>>>> 148d2c60c5739be05087b1840d372c4ea861b9b0
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-      new viewinfo(loggedInMeterNumber).setVisible(true);
+     new viewinfo(loggedInMeterNumber).setVisible(true);
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -394,9 +390,10 @@ private String loggedInMeterNumber;
          new generatebill(loggedInMeterNumber).setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-     new aboutuspage().setVisible(true);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+         new help().setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -450,7 +447,6 @@ private String loggedInMeterNumber;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

@@ -31,40 +31,24 @@ public class help extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(60, 200));
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("      \n General FAQs for Electricity Billing System\n\n1. How can I register for an account on the electricity billing system?\nSolution:\nTo register, visit the Signup page on the portal and provide necessary details such as your  meter number, name, \naddress, and password. Once submitted, you can login to application.\n\n2. Why is my electricity bill so high this month?\nSolution:\nThere can be several reasons for a high bill:\nIncreased usage: Check if your electricity consumption has increased (e.g., more appliances used, air conditioning, heating).\nFaulty Meter Reading: If you believe the meter reading is incorrect, contact customer service to verify the reading.\nRate Changes: Rates may have increased due to seasonal or tariff changes. Check the notifications section for any updates.\n\n3. Why is there an additional charge on my bill this month?\nSolution:\nAdditional charges can include:\nLate Fees: If your previous payment was delayed.\nMeter Service Fees: These are standard fees for maintaining and reading your meter.\nTaxes or Regulatory Charges: These may be added by government authorities or utility regulation bodies.\n\n4. How can I change my account information (contact details)?\nSolution:\nLog into your account, go to the “Update Info” section, and you’ll be able to update your  contact details.\n If you're unable to do so online, contact customer support with your updated information.\n\n5. How can I track the status of my payment?\nSolution:\nOnce you make a payment, the system will automatically update your account. You can track your payment status in \nthe \"Bill Details\" section of your user dashboard. If you made a payment but it’s not reflected, contact support \nwith your payment details for further assistance.\n\nAbout\nElectricity Tariff Rates\n1. Residential Category\n1.1 Single-Phase Low Voltage (230V)\nTariff structure based on amperage (5A, 15A, 30A, 60A).\nCharges are divided based on energy consumption in kilowatt-hours (kWh) per month.\nTariff Details by Consumption Bracket\nFor 5 Amperes (5A)\nUp to 20 kWh\n\nMonthly Minimum Charge: Rs. 30\nEnergy Charge per Unit: Rs. 0\n21 to 30 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 4.50\n31 to 50 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 7.50\n51 to 100 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 9.50\n101 to 150 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 11.50\nAbove 150 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 13.00\nFor 15 Amperes (15A)\nMonthly Minimum Charge: Rs. 100\nEnergy Charge per Unit: Same as 5A rates\nFor 30 Amperes (30A)\nMonthly Minimum Charge: Rs. 150\nEnergy Charge per Unit: Same as 5A rates\nFor 60 Amperes (60A)\nMonthly Minimum Charge: Rs. 325\nEnergy Charge per Unit: Same as 5A rates\n\n \nContact Support :  \nEmail: ebsquery123@gmail.com\nPhone: 061-563657\nMobile: 9806778999\n");
+        jTextArea1.setText("      \n General FAQs for Electricity Billing System\n\n1. How can I register for an account on the electricity billing system?\nSolution:\nTo register, visit the Signup page on the portal and provide necessary details such as your  \nmeter number, name, address, and password. \nOnce submitted, you can login to application.\n\n2. Why is my electricity bill so high this month?\nSolution:\nThere can be several reasons for a high bill:\nIncreased usage: Check if your electricity consumption has increased (e.g., more appliances\n used, air conditioning, heating).Faulty Meter Reading: \nIf you believe the meter reading is incorrect, contact customer service to verify the reading.\nRate Changes: Rates may have increased due to seasonal or tariff changes. Check the \nnotifications section for any updates.\n\n3. Why is there an additional charge on my bill this month?\nSolution:\nAdditional charges can include:\nLate Fees: If your previous payment was delayed.\nMeter Service Fees: These are standard fees for maintaining and reading your meter.\nTaxes or Regulatory Charges: These may be added by government authorities or utility \nregulation bodies.\n\n4. How can I change my account information (contact details)?\nSolution:\nLog into your account, go to the “Update Info” section, and you’ll be able to update your  \ncontact details.\nIf you're unable to do so online, contact customer support with your updated information.\n\n5. How can I track the status of my payment?\nSolution:\nOnce you make a payment, the system will automatically update your account. You can \ntrack your payment status in the \"Bill Details\" section of your user dashboard. \nIf you made a payment but it’s not reflected, contact support with your payment \ndetails for further assistance.\n\n\n\nAbout\nElectricity Tariff Rates\n1. Residential Category\n1.1 Single-Phase Low Voltage (230V)\nTariff structure based on amperage (5A, 15A, 30A, 60A).\nCharges are divided based on energy consumption in kilowatt-hours (kWh) per month.\nTariff Details by Consumption Bracket\nFor 5 Amperes (5A)\nUp to 20 kWh\n\nMonthly Minimum Charge: Rs. 30\nEnergy Charge per Unit: Rs. 0\n21 to 30 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 4.50\n31 to 50 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 7.50\n51 to 100 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 9.50\n101 to 150 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 11.50\nAbove 150 kWh\n\nMonthly Minimum Charge: Rs. 50\nEnergy Charge per Unit: Rs. 13.00\nFor 15 Amperes (15A)\nMonthly Minimum Charge: Rs. 100\nEnergy Charge per Unit: Same as 5A rates\nFor 30 Amperes (30A)\nMonthly Minimum Charge: Rs. 150\nEnergy Charge per Unit: Same as 5A rates\nFor 60 Amperes (60A)\nMonthly Minimum Charge: Rs. 325\nEnergy Charge per Unit: Same as 5A rates\n\n\n \nContact Support :  \nEmail: ebsquery123@gmail.com\nPhone: 061-563657\nMobile: 9806778999\n");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Help Desk");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 800, 510));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(379, 379, 379)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Help Desk");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
