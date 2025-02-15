@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import project.connectionpro;
 import java.sql.PreparedStatement;
+import java.util.Arrays;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -109,6 +110,12 @@ public class calculatebill extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField4MouseClicked(evt);
             }
         });
 
@@ -289,19 +296,7 @@ public class calculatebill extends javax.swing.JFrame {
 
     // Database Connection
     Connection con = connectionpro.getconn();
-
-    // First Insert into `bill`
-    String query1 = "INSERT INTO bill (`meter number`, Name, Address, `Unit Consumed`, Month) VALUES (?, ?, ?, ?, ?)";
-    PreparedStatement pst1 = con.prepareStatement(query1);
-    pst1.setString(1, meter);
-    pst1.setString(2, name);
-    pst1.setString(3, add);
-    pst1.setInt(4, units);
-    pst1.setString(5, month);
-
-    int rowsAffected1 = pst1.executeUpdate();
-
-    // Second Insert into `bills`
+// Second Insert into `bills`
     String query2 = "INSERT INTO bills (`meter number`, `Name`, `Month`,`previous_reading`,`present_reading`, `Unit Consumed`, `Total_bill`, `Payment_status`) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     PreparedStatement pst2 = con.prepareStatement(query2);
@@ -315,8 +310,7 @@ public class calculatebill extends javax.swing.JFrame {
     pst2.setString(8, status);
 
     int rowsAffected2 = pst2.executeUpdate(); // Only one execution
-
-    if (rowsAffected1 > 0 && rowsAffected2 > 0) {
+         if (rowsAffected2 > 0) {
         JOptionPane.showMessageDialog(null, "Successfully added\nPayment_status: " + status);
         setVisible(false);
         new home().setVisible(true);
@@ -337,7 +331,7 @@ public class calculatebill extends javax.swing.JFrame {
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-        String selectedMeterNumber = (String) jComboBox2.getSelectedItem();
+       String selectedMeterNumber = (String) jComboBox2.getSelectedItem();
     if (selectedMeterNumber != null && !selectedMeterNumber.isEmpty()) {
         try {
             
@@ -372,7 +366,12 @@ public class calculatebill extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
-try {
+ 
+    }//GEN-LAST:event_jTextField5KeyReleased
+
+    private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
+        // TODO add your handling code here:
+        try {
         String prevText = jTextField1.getText();
         String presText = jTextField5.getText();
 
@@ -392,7 +391,7 @@ try {
         jTextField4.setText(""); // Clear field if input is invalid
     }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5KeyReleased
+    }//GEN-LAST:event_jTextField4MouseClicked
 
     /**
      * @param args the command line arguments
