@@ -5,6 +5,7 @@ import project.connectionpro;
 import java.sql.PreparedStatement;
 import javax.swing.JFrame;
 
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -244,12 +245,45 @@ public class newcustomers extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
         return;  // Exit if phone number is invalid
     }
-        else if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$" /*"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"*/)) {  // Check if phone contains only digits (regex for digits only)
+       /* else if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$" )) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Email must be in correct format.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if email is invalid
+<<<<<<< HEAD
             
         }
   
+=======
+        }*/
+        /*  if (!EmailValidator.isValidFormat(email)) {
+        JOptionPane.showMessageDialog(null, "Email format is incorrect.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (!EmailValidator.isValidDomain(email)) {
+        JOptionPane.showMessageDialog(null, "Email domain is invalid.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (!EmailValidator.isEmailExists(email)) {
+        JOptionPane.showMessageDialog(null, "Email does not exist!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+*/
+        if (!EmailValidator.isValidGmailFormat(email)) {
+        JOptionPane.showMessageDialog(null, "Email format is incorrect.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+   /* if (!EmailValidator.isValidDomain(email)) {
+        JOptionPane.showMessageDialog(null, "Email domain is invalid.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+*/
+    if (!EmailValidator.verifyEmail(email)) {
+        JOptionPane.showMessageDialog(null, "Email does not exist or is invalid!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+>>>>>>> 03362bc6468652d0654f19b0d9e68bbb5ce323a4
         else{
 
             try {
