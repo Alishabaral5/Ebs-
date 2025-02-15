@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="836" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="126" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="34" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="538" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="      &#xa; General FAQs for Electricity Billing System&#xa;&#xa;1. How can I register for an account on the electricity billing system?&#xa;Solution:&#xa;To register, visit the Signup page on the portal and provide necessary details such as your  meter number, name, &#xa;address, and password. Once submitted, you can login to application.&#xa;&#xa;2. Why is my electricity bill so high this month?&#xa;Solution:&#xa;There can be several reasons for a high bill:&#xa;Increased usage: Check if your electricity consumption has increased (e.g., more appliances used, air conditioning, heating).&#xa;Faulty Meter Reading: If you believe the meter reading is incorrect, contact customer service to verify the reading.&#xa;Rate Changes: Rates may have increased due to seasonal or tariff changes. Check the notifications section for any updates.&#xa;&#xa;3. Why is there an additional charge on my bill this month?&#xa;Solution:&#xa;Additional charges can include:&#xa;Late Fees: If your previous payment was delayed.&#xa;Meter Service Fees: These are standard fees for maintaining and reading your meter.&#xa;Taxes or Regulatory Charges: These may be added by government authorities or utility regulation bodies.&#xa;&#xa;4. How can I change my account information (contact details)?&#xa;Solution:&#xa;Log into your account, go to the &#x201c;Update Info&#x201d; section, and you&#x2019;ll be able to update your  contact details.&#xa; If you&apos;re unable to do so online, contact customer support with your updated information.&#xa;&#xa;5. How can I track the status of my payment?&#xa;Solution:&#xa;Once you make a payment, the system will automatically update your account. You can track your payment status in &#xa;the &quot;Bill Details&quot; section of your user dashboard. If you made a payment but it&#x2019;s not reflected, contact support &#xa;with your payment details for further assistance.&#xa;&#xa;About&#xa;Electricity Tariff Rates&#xa;1. Residential Category&#xa;1.1 Single-Phase Low Voltage (230V)&#xa;Tariff structure based on amperage (5A, 15A, 30A, 60A).&#xa;Charges are divided based on energy consumption in kilowatt-hours (kWh) per month.&#xa;Tariff Details by Consumption Bracket&#xa;For 5 Amperes (5A)&#xa;Up to 20 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 30&#xa;Energy Charge per Unit: Rs. 0&#xa;21 to 30 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 50&#xa;Energy Charge per Unit: Rs. 4.50&#xa;31 to 50 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 50&#xa;Energy Charge per Unit: Rs. 7.50&#xa;51 to 100 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 50&#xa;Energy Charge per Unit: Rs. 9.50&#xa;101 to 150 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 50&#xa;Energy Charge per Unit: Rs. 11.50&#xa;Above 150 kWh&#xa;&#xa;Monthly Minimum Charge: Rs. 50&#xa;Energy Charge per Unit: Rs. 13.00&#xa;For 15 Amperes (15A)&#xa;Monthly Minimum Charge: Rs. 100&#xa;Energy Charge per Unit: Same as 5A rates&#xa;For 30 Amperes (30A)&#xa;Monthly Minimum Charge: Rs. 150&#xa;Energy Charge per Unit: Same as 5A rates&#xa;For 60 Amperes (60A)&#xa;Monthly Minimum Charge: Rs. 325&#xa;Energy Charge per Unit: Same as 5A rates&#xa;&#xa; &#xa;Contact Support :  &#xa;Email: ebsquery123@gmail.com&#xa;Phone: 061-563657&#xa;Mobile: 9806778999&#xa;"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Help Desk"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

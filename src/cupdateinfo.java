@@ -186,18 +186,16 @@ public class cupdateinfo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Email and Phone fields cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
         return; // Exit the method if any field is empty
     }
-<<<<<<< HEAD
          else if (!Phone.matches("\\d{10}")) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if meter nb or phone is invalid
         }
-=======
-        
+         
           else if (!Phone.matches("\\d{10}")) {  
         JOptionPane.showMessageDialog(null, "Phone Number must be exactly 10 digits.", "Input Error", JOptionPane.ERROR_MESSAGE);
         return;  // Exit if phone number is invalid
     }
->>>>>>> 148d2c60c5739be05087b1840d372c4ea861b9b0
+
         else if (!Email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {  // Check if phone contains only digits (regex for digits only)
             JOptionPane.showMessageDialog(null, "Email must be in correct format.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;  // Exit if email is invalid
@@ -220,9 +218,14 @@ public class cupdateinfo extends javax.swing.JFrame {
             if (rowsUpdated > 0) {
                 JOptionPane.showMessageDialog(this, "Information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                  String updateMessage = "Customer '" +  jTextField2.getName() + "' has updated their information.";
-    
-    // 3. Notify the admin about the update (this can be done via an in-app push notification or system message)
-              notification.getInstance().addNotification(updateMessage);  // Push the message to NotificationManager (Admin's side)
+             // Notify the admin within the application (add notification to NotificationManager)
+        notification.getInstance().addNotification(updateMessage);
+        
+    // Optionally, show a popup for the admin or update the admin's notification window in real time
+    // (This can be done by updating the GUI of the admin panel)
+    JOptionPane.showMessageDialog(this, "Admin has been notified about the update.", "Notification Sent", JOptionPane.INFORMATION_MESSAGE);
+  
+   
             } else {
                 JOptionPane.showMessageDialog(this, "No record found for the specified meter number.", "Error", JOptionPane.ERROR_MESSAGE);
             }

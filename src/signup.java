@@ -1,4 +1,3 @@
-
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.sql.Connection;
@@ -76,7 +75,7 @@ public class signup extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel7 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -139,9 +138,14 @@ public class signup extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 150, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pexels-fariphotography-1112598 resize.jpg"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 700, 580));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setText("See");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 60, 20));
 
         pack();
         setLocationRelativeTo(null);
@@ -152,25 +156,35 @@ public class signup extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         if (jPasswordField1.getEchoChar() == '\u0000') {
+        // Password is currently visible, hide it
+        jPasswordField1.setEchoChar('*');
+        jButton3.setText("See");
+    } else {
+        // Password is hidden, show it
+        jPasswordField1.setEchoChar((char) 0); // Make the password visible
+        jButton3.setText("Hide");
+    }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String meter=jTextField1.getText();
+        String meter=jTextField1.getText();
         String user=jTextField2.getText();
         String nam=jTextField3.getText();
         //String pas=jPasswordField1.getText();
-         String pas = new String(jPasswordField1.getPassword());
-        
+        String pas = new String(jPasswordField1.getPassword());
+
         if (meter.isEmpty() || user.isEmpty() || nam.isEmpty() || pas.isEmpty() ) {
             JOptionPane.showMessageDialog(null, "All fields must be filled.");
             return;
         }
         if (!isStrongPassword(pas)) {
-       JOptionPane.showMessageDialog(null, "Password must contain at least 8 characters, including upper/lowercase letters, a number, and a special character.");
-       return;
-   }
-        
-         
-        
-      
+            JOptionPane.showMessageDialog(null, "Password must contain at least 8 characters, including upper/lowercase letters, a number, and a special character.");
+            return;
+        }
+
         try{
             Connection con=connectionpro.getconn();
             Statement st=con.createStatement();
@@ -182,17 +196,17 @@ public class signup extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"Error during sign up");
         }
-       
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jTextField3ActionPerformed
  /*private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {
     String selectedMeterNumber = jTextField1.getText().trim(); // Get meter number
 
@@ -257,12 +271,12 @@ public class signup extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

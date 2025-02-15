@@ -1,40 +1,40 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 public class notification {
+     private String message;
     private static notification instance;
-    private Queue<String> notifications; // Queue to store notifications
-
-    private notification() {
-        notifications = new LinkedList<>();
+    private List<String> notifications;
+    
+    // Private constructor for Singleton pattern
+    private notification(String message) {
+         this.message = message;
+        notifications = new ArrayList<>();
     }
-
-    // Singleton pattern to access the instance of NotificationManager
+    
+    // Get the single instance of NotificationManager
     public static notification getInstance() {
         if (instance == null) {
-            instance = new notification();
+            instance = new notification("");
         }
         return instance;
     }
-
-    // Add a new notification to the queue
+    
+    // Add a new notification to the list
     public void addNotification(String message) {
         notifications.add(message);
     }
-
-    // Get the latest notification (and remove it from the queue)
-    public String getLatestNotification() {
-        return notifications.poll();
+    
+    // Get all notifications
+    public List<String> getNotifications() {
+        return notifications;
     }
+    
+    // Clear notifications (optional)
+    public void clearNotifications() {
+        notifications.clear();
+    }
+    public String getMessage() {
+        return message;
 }
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author acer
- */
+}

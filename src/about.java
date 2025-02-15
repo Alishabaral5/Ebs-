@@ -30,25 +30,8 @@ public class about extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
@@ -56,156 +39,34 @@ public class about extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("About Us");
 
-        jDesktopPane1.setBackground(new java.awt.Color(227, 242, 249));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Welcome to the Electricity Billing System!");
-
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea2.setRows(5);
-        jTextArea2.setText(" Our Electricity Billing System is developed as part of our college\nproject at [Pokhara Engineering College].This system automates \nthe billing process and aims to enhance the user experience by \nproviding accurate and real-time billing information for \nelectricity consumption.\nManual billing systems often result in errors, delayed bill generation,\nand customer dissatisfaction. This project addresses these issues by\nautomating the entire process, allowing users to view and pay their \nbills online in real-time.The main objective of this project is to create \nan automated, efficient, and transparent electricity billing system. \nOur goal is to reduce errors and make the billing process faster, easier, \nand more reliable for both users and administrators.\n\n\n");
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("System Features");
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Automated Bill Generation: The system calculates the bill automatically \nbased on electricity consumption and generates invoices.\nUser Accounts: Customers can manage their profiles, while admins can \ncreate and oversee user data and billing.\nOnline Payment: Seamless payment options for users to pay their bills.\nReports: Real-time bill tracking and historical data for customers and \nalso generate bill.");
-        jScrollPane3.setViewportView(jTextArea3);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Technologies Used");
-
-        jTextArea4.setColumns(20);
-        jTextArea4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Java (Backend Development)\nXampp (Database Management)\nJava Swing (GUI Development)\nJasperReports (PDF Bill Generation)");
-        jScrollPane4.setViewportView(jTextArea4);
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("Challenges Faced");
-
-        jTextArea5.setColumns(20);
-        jTextArea5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea5.setRows(5);
-        jTextArea5.setText("Data Security: Ensuring secure payment transactions was a challenge, \nbut we addressed it by integrating encryption protocols and secure \ncommunication.\nPayment Gateway Integration: Implementing a functional payment \nsystem involved overcoming technical hurdles, but after extensive \nresearch, we successfully integrated it.");
-        jScrollPane5.setViewportView(jTextArea5);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Conclusion");
-
-        jTextArea6.setColumns(20);
-        jTextArea6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea6.setRows(5);
-        jTextArea6.setText("Our Electricity Billing System offers an innovative solution to traditional\nbilling methods, aiming to improve accuracy and streamline the billing \nexperience for consumers. We believe that this system will be beneficial\nin reducing human errors,increasing efficiency, and ensuring that users \ncan easily track their electricity usage.");
-        jScrollPane6.setViewportView(jTextArea6);
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Team Members");
-
-        jTextArea7.setColumns(20);
-        jTextArea7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea7.setRows(5);
-        jTextArea7.setText("Alisha Baral\nAnuja Lamichhane\nSheeksha Kaji Baral");
-        jScrollPane7.setViewportView(jTextArea7);
-
-        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 93, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("                Welcome to the Electricity Billing System!\n\n Our Electricity Billing System is developed as part of our college\nproject at [Pokhara Engineering College].This system automates \nthe billing process and aims to enhance the user experience by \nproviding accurate and real-time billing information for \nelectricity consumption.\nManual billing systems often result in errors, delayed bill generation,\nand customer dissatisfaction. This project addresses these issues by\nautomating the entire process, allowing users to view and pay their \nbills online in real-time.The main objective of this project is to create \nan automated, efficient, and transparent electricity billing system. \nOur goal is to reduce errors and make the billing process faster, easier, \nand more reliable for both users and administrators.\n\n\nSystem Features:\nAutomated Bill Generation: The system calculates the bill automatically \nbased on electricity consumption and generates invoices.\nUser Accounts: Customers can manage their profiles, while admins can \ncreate and oversee user data and billing.\nOnline Payment: Seamless payment options for users to pay their bills.\nReports: Real-time bill tracking and historical data for customers and \nalso generate bill.\n\nTechnologies Used:\nJava (Backend Development)\nXampp (Database Management)\nJava Swing (GUI Development)\nStripe (payment)\n\nChallenges Faced:\nData Security: Ensuring secure payment transactions was a challenge, \nbut we addressed it by integrating encryption protocols and secure \ncommunication.\nPayment Gateway Integration: Implementing a functional payment \nsystem involved overcoming technical hurdles, but after extensive \nresearch, we successfully integrated it.\n\nConclusion:\nOur Electricity Billing System offers an innovative solution to traditional\nbilling methods, aiming to improve accuracy and streamline the billing \nexperience for consumers. We believe that this system will be beneficial\nin reducing human errors,increasing efficiency, and ensuring that users \ncan easily track their electricity usage.\n\nTeam Members:\nAlisha Baral\nAnuja Lamichhane\nSheeksha Kaji Baral");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addGap(330, 330, 330)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,25 +109,8 @@ public class about extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

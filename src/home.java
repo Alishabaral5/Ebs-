@@ -88,8 +88,8 @@ public class home extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -171,6 +171,15 @@ public class home extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem6);
 
+        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenuItem7.setText("Dashboard");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem7);
+
         jMenuBar2.add(jMenu5);
 
         jMenu1.setText("LOGOUT");
@@ -181,15 +190,6 @@ public class home extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(jMenu1);
-
-        jMenu2.setText("DASHBOARD");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
-        jMenuBar2.add(jMenu2);
 
         setJMenuBar(jMenuBar2);
 
@@ -273,12 +273,11 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-          
-        new adminDashboard( notificationManager).setVisible(true);
-    }//GEN-LAST:event_jMenu2ActionPerformed
-
+          new dashboard().setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+   
     /**
      * @param args the command line arguments
      */
@@ -308,6 +307,7 @@ public class home extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
                 new home().setVisible(true);
             }
@@ -318,7 +318,6 @@ public class home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
@@ -328,5 +327,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }

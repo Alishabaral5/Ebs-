@@ -5,6 +5,9 @@ import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane; 
 import project.connectionpro;
+ import org.netbeans.lib.awtextra.AbsoluteLayout;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
+ 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -43,8 +46,8 @@ public class login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -53,7 +56,7 @@ public class login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.jpg"))); // NOI18N
         jLabel1.setText("LOGIN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Username");
@@ -106,10 +109,18 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 580, 150, 30));
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 150, 30));
 
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setText("See");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, -1, 30));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/20220201175539_61f9741b8c0d8_electricity_billing_system_project._pptpage0.png"))); // NOI18N
         jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, -190, -1, -1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 250, 190));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-230, -170, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -179,9 +190,22 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    new signup().setVisible(true);
+    new sign().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         if (jPasswordField1.getEchoChar() == '\u0000') {
+        // Password is currently visible, hide it
+        jPasswordField1.setEchoChar('*');
+        jButton4.setText("See");
+    } else {
+        // Password is hidden, show it
+        jPasswordField1.setEchoChar((char) 0); // Make the password visible
+        jButton4.setText("Hide");
+    }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,13 +246,13 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
